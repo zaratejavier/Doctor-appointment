@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+appt_date = "Wed, 24 Sep 2014"
+
+10.times do 
+  patient = Patient.creaete(first_name: Faker::Name.first_name)
+
+  10.times do 
+    physician = Physician.create(
+      first_name: Faker::Name.first_name
+    )
+
+    Appointments.create(
+      appt_date: appt_date.sample,
+      patient_id: patient.id,
+      physician_id: physician.id,
+    )
+end
