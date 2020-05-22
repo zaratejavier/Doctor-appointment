@@ -15,9 +15,13 @@
     physician = Physician.create(
       first_name: Faker::Name.first_name
     )
-
+  end
     10.times do
     appointment = Appointment.create(
       appt_date: Faker::Date.between(from: 2.days.ago, to: Date.today)
     )
+  end
 end
+
+puts "SEEEEDDDD"
+puts Patient.all.size
