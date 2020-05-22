@@ -9,7 +9,7 @@
 # appt_date = "Wed, 24 Sep 2014"
 
 10.times do 
-  patient = Patient.creaete(first_name: Faker::Name.first_name)
+  patient = Patient.create(first_name: Faker::Name.first_name)
 
   10.times do 
     physician = Physician.create(
@@ -17,7 +17,7 @@
     )
 
     10.times do
-    appointment = Appointments.create(
+    appointment = Appointment.create(
       appt_date: Faker::Date.between(from: 2.days.ago, to: Date.today)
     )
 end
